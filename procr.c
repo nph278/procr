@@ -32,17 +32,17 @@ int main(int argc, char **argv) {
     closedir(proccess_dir);
 
     // Get PID
-    printf("PID (Process ID): %s\n", argv[1]);
+    printf("\033[0;34mPID (Process ID): %s\033[0m\n", argv[1]);
 
     // Get SID
     char session_id[50];
     read_process_file(proccess_path, "sessionid", session_id);
-    printf("SID (Session ID): %s\n", session_id);
+    printf("\033[0;32mSID (Session ID): %s\033[0m\n", session_id);
 
     // Get cmdline
     char cmd_line[255];
     read_process_file(proccess_path, "cmdline", cmd_line);
-    printf("Command Line: %s\n", cmd_line);
+    printf("\033[0;31mCommand Line: %s\033[0m\n", cmd_line);
 
     return 0;
   } else {
